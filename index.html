@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Exemplo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        /* Estilos do cabeçalho */
+        header {
+            background-color: #1a1a1a;
+            padding: 10px 0;
+        }
+        header h1 {
+            text-align: center;
+            color: #4caf50;
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: #4caf50;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff4081;
+        }
+        /* Estilos dos produtos */
+        .produtos {
+            padding: 20px;
+            background-color: #333333;
+        }
+        .produto {
+            border: 1px solid #4caf50;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #1a1a1a;
+        }
+        .produto img {
+            float: left;
+            margin-right: 10px;
+            border: 1px solid #4caf50;
+            padding: 3px;
+        }
+        .produto h3 {
+            margin-top: 0;
+            color: #4caf50;
+        }
+        .produto p {
+            color: #ccc;
+        }
+        .produto button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .produto button:hover {
+            background-color: #ff4081;
+        }
+        /* Estilos do carrinho */
+        .carrinho {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #1a1a1a;
+            padding: 10px;
+            border-left: 1px solid #4caf50;
+            border-bottom: 1px solid #4caf50;
+            z-index: 1000;
+            display: none;
+            width: 250px;
+        }
+        .carrinho.active {
+            display: block;
+        }
+        .carrinho ul {
+            list-style-type: none;
+            padding: 0;
+            color: #ccc;
+        }
+        .carrinho h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+            color: #4caf50;
+        }
+        .carrinho p {
+            color: #ccc;
+        }
+        .sobre, .contato {
+            background-color: #333333;
+            color: #ccc;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aplha-punk</h1>
+        <nav>
+            <ul>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="produtos" class="produtos">
+            <h2>Produtos em Destaque</h2>
+            <div class="produto" data-nome="SynthCoke" data-preco="1000">
+                <img src="C:\ARQUIVOS\Engenharia de Software\Steampunk\Produtos\Synthcoke.jpeg" alt="SynthCoke">
+                <h3>SynthCoke</h3>
+                <p>Paranoia e vício psicológico</p>
+                <p>Dura: 2-7 minutos</p>
+                <p>Preço: 1000eb</p>
+                <button class="adicionar">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Stim" data-preco="500">
+                <img src="C:\ARQUIVOS\Engenharia de Software\Steampunk\Produtos\stim.jpeg" alt="Stim">
+                <h3>Stim</h3>
+                <p>Resistência e estado de alerta</p>
+                <p>Dura: 6-12 minutos</p>
+                <p>Preço: 500eb</p>
+                <button class="adicionar">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Syncomp" data-preco="650">
+                <img src="C:\ARQUIVOS\Engenharia de Software\Steampunk\Produtos\Syncomp.jpeg" alt="Syncomp">
+                <h3>Syncomp</h3>
+                <p>Tratamento de biotoxinas</p>
+                <p>Dura: 3-4 minutos</p>
+                <p>Preço: 650eb</p>
+                <button class="adicionar">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Speedheal" data-preco="1650">
+                <img src="C:\ARQUIVOS\Engenharia de Software\Steampunk\Produtos\Speedheal.jpeg" alt="Speedheal">
+                <h3>Speedheal</h3>
+                <p>Fortalece processo de cura</p>
+                <p>Dura: 10-20 minutos</p>
+                <p>Preço: 1650eb</p>
+                <button class="adicionar">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Boost" data-preco="6000">
+                <img src="C:\ARQUIVOS\Engenharia de Software\Steampunk\Produtos\HyperBoost.jpeg" alt="Boost">
+                <h3>Boost</h3>
+                <p>Aumento de raciocínio, causa alucinações</p>
+                <p>Dura: 120-130 minutos</p>
+                <p>Preço: 6000eb</p>
+                <button class="adicionar">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Blue Glass" data-preco="1900">
+                <img src="C:\ARQUIVOS\Engenharia de Software\Steampunk\Produtos\Blueglass.jpeg" alt="Blue Glass">
+                <h3>Blue Glass</h3>
+                <p>Apagões e euforia</p>
+                <p>Efeito instantâneo</p>
+                <p>Preço: 1900eb</p>
+                <button class="adicionar">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Smash" data-preco="100">
+                <img src="C:\ARQUIVOS\Engenharia de Software\Steampunk\Produtos\smash.jpeg" alt="Smash">
+                <h3>Smash</h3>
+                <p>Felicidade instantânea, pode causar pensamentos suicidas</p>
+                <p>Efeito instantâneo</p>
+                <p>Preço: 100eb</p>
+                <button class="adicionar">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Dorph" data-preco="250">
+                <img src="C:\ARQUIVOS\Engenharia de Software\Steampunk\Produtos\Dorph.jpeg" alt="Dorph">
+                <h3>Dorph</h3>
+                <p>Anestésico controlado</p>
+                <p>Dura: 30-40 minutos</p>
+                <p>Preço: 250eb</p>
+                <button class="adicionar">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto" data-nome="Black Lace" data-preco="2500">
+                <img src="C:\ARQUIVOS\Engenharia de Software\Steampunk\Produtos\BlackLace.jpeg" alt="Black Lace">
+                <h3>Black Lace</h3>
+                <p>Versão modificada de Dorph</p>
+                <p>Dura: 20-30 minutos</p>
+                <p>Preço: 2500eb</p>
+                <button class="adicionar">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+        
+        <section id="sobre" class="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Bem vindo a Aplha-punk o seu comercio virtual, livre, seguro e confiavel de diversos produtos.
+                <p></p>
+                Não nos responsabilizamos pela entrega ou qualidade do produto, apenas coordenamos os pagamentos e mantemos os anônimos.</p>
+        </section>
+        
+        <section id="contato" class="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco! Estamos aqui para responder suas dúvidas e ouvir suas sugestões.
+            <p></p> 
+            Envie-nos um email -> m0rr1tz@alphapunk.com <- </p>
+                </section>
+                </main>
+                <div class="carrinho">
+                    <h2>Carrinho de Compras</h2>
+                    <ul>
+                        <!-- Itens do carrinho serão adicionados dinamicamente -->
+                    </ul>
+                    <p>Total: <span id="total-carrinho">0</span> eb</p>
+                    <button class="limpar">Limpar Carrinho</button>
+                    <button class="concluir-pagamento">Concluir Pagamento</button>
+                </div>
+                
+                <script>
+                    // Função para formatar o preço
+                    function formatarPreco(preco) {
+                        return preco.toFixed(2).replace('.', ',');
+                    }
+                    
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const botoesAdicionar = document.querySelectorAll('.adicionar');
+                        const carrinho = document.querySelector('.carrinho');
+                        const listaCarrinho = carrinho.querySelector('ul');
+                        const totalCarrinho = carrinho.querySelector('#total-carrinho');
+                        const btnLimparCarrinho = carrinho.querySelector('.limpar');
+                        const btnConcluirPagamento = carrinho.querySelector('.concluir-pagamento');
+                        const produtos = document.querySelectorAll('.produto');
+                        
+                        let carrinhoItens = [];
+                        
+                        // Função para adicionar um item ao carrinho
+                        function adicionarAoCarrinho(nome, preco) {
+                            for (let item of carrinhoItens) {
+                                if (item.nome === nome) {
+                                    item.quantidade++;
+                                    renderizarCarrinho();
+                                    return;
+                                }
+                            }
+                            carrinhoItens.push({ nome, preco, quantidade: 1 });
+                            renderizarCarrinho();
+                        }
+                        
+                        // Função para renderizar o carrinho
+                        function renderizarCarrinho() {
+                            listaCarrinho.innerHTML = '';
+                            let total = 0;
+                            carrinhoItens.forEach(item => {
+                                const li = document.createElement('li');
+                                li.innerHTML = `${item.nome} - ${item.quantidade} x ${formatarPreco(item.preco)} eb`;
+                                listaCarrinho.appendChild(li);
+                                total += item.preco * item.quantidade;
+                            });
+                            totalCarrinho.textContent = formatarPreco(total);
+                            
+                            if (carrinhoItens.length > 0) {
+                                carrinho.classList.add('active');
+                            } else {
+                                carrinho.classList.remove('active');
+                            }
+                        }
+                        
+                        // Adicionar eventos aos botões "Adicionar ao Carrinho"
+                        botoesAdicionar.forEach((botao, index) => {
+                            botao.addEventListener('click', () => {
+                                const produto = produtos[index];
+                                const nome = produto.getAttribute('data-nome');
+                                const preco = parseInt(produto.getAttribute('data-preco'));
+                                adicionarAoCarrinho(nome, preco);
+                            });
+                        });
+                        
+                        // Limpar carrinho
+                        btnLimparCarrinho.addEventListener('click', () => {
+                            carrinhoItens = [];
+                            renderizarCarrinho();
+                        });
+                        
+                        // Concluir pagamento (simulado com um alerta)
+                        btnConcluirPagamento.addEventListener('click', () => {
+                            if (carrinhoItens.length === 0) {
+                                alert('Seu carrinho está vazio.');
+                                return;
+                            }
+                            alert('Se fudeu mané, seu ip esta sendo rastreado pela Special Investigations unit, e seu dinheiro permanecera retido como imposto.');
+                            carrinhoItens = [];
+                            renderizarCarrinho();
+                        });
+                    });
+                </script>
+                </body>
+                 </html>  
